@@ -73,7 +73,7 @@ Ce projet est un système de gestion des équipements informatiques, développé
 ## Contact
 
 - Noureddine Bouzire - bouzire.noureddine1@gmail.com
-- 
+  
 
 
 
