@@ -11,7 +11,6 @@ Ce projet est un système de gestion des équipements informatiques, développé
 - [Architecture](#architecture)
 - [Technologies Utilisées](#technologies-utilisées)
 - [Contributions](#contributions)
-- [Licence](#licence)
 - [Contact](#contact)
 
 ## Fonctionnalités
@@ -42,7 +41,7 @@ Ce projet est un système de gestion des équipements informatiques, développé
 
 ## Prérequis
 
-- Java 11 ou supérieur
+- Java 17 ou supérieur
 - Node.js et npm
 - Angular CLI
 - MySQL
@@ -52,3 +51,30 @@ Ce projet est un système de gestion des équipements informatiques, développé
 1. **Cloner le dépôt**
    ```bash
    git clone https://github.com/votre-utilisateur/votre-repo.git
+
+## Utilisation
+
+- Accéder à l'application via http://localhost:4200`
+- Se connecter en tant qu'administrateur ou utilisateur pour utiliser les différentes fonctionnalités.
+
+## Architecture
+
+- Backend : API RESTful développée avec Spring Boot.
+- Frontend : Application SPA développée avec Angular.
+- Base de Données : MySQL pour la gestion des données.
+  
+## Technologies Utilisées
+
+- Frontend : Angular, TypeScript, HTML, CSS
+- Backend : Java, Spring Boot, Spring Data JPA, Hibernate
+- Base de Données : MySQL
+- Outils de Développement : IntelliJ IDEA, Angular CLI, Maven, Git
+    
+## Contact
+
+- Noureddine Bouzire - bouzire.noureddine1@gmail.com
+- 
+
+
+
+
