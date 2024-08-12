@@ -12,17 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Controller for handling admin-related requests.
- *
- * This controller provides endpoints for managing admins.
- *
- * Created by Yassine Oularbi
- *
- * Contact:
- * Email: yassineoularbi4@gmail.com
- * GitHub: @YassineOularbi
- */
+
 
 @RestController
 @RequestMapping("/api/admin")
@@ -32,11 +22,7 @@ public class AdminController {
 
     private final AdminService adminService;
 
-    /**
-     * Endpoint for retrieving all admins.
-     *
-     * @return a list of admins or an error message.
-     */
+
     @GetMapping("/get-all-admins")
     @ApiOperation(value = "Get all admins", notes = "Retrieves a list of all admins.")
     @ApiResponses(value = {
@@ -52,12 +38,7 @@ public class AdminController {
         }
     }
 
-    /**
-     * Endpoint for retrieving an admin by ID.
-     *
-     * @param id the ID of the admin.
-     * @return the admin or an error message.
-     */
+
     @GetMapping("/admin/get-admin-by-id/{id}")
     @ApiOperation(value = "Get admin by ID", notes = "Retrieves a specific admin by their ID.")
     @ApiResponses(value = {
@@ -74,13 +55,7 @@ public class AdminController {
         }
     }
 
-    /**
-     * Endpoint for updating an admin.
-     *
-     * @param id the ID of the admin.
-     * @param userUpdateDto the admin update details.
-     * @return the updated admin or an error message.
-     */
+
     @PutMapping("/admin/update-admin/{id}")
     @ApiOperation(value = "Update admin", notes = "Updates the details of a specific admin.")
     @ApiResponses(value = {
@@ -98,12 +73,7 @@ public class AdminController {
         }
     }
 
-    /**
-     * Endpoint for deleting an admin.
-     *
-     * @param id the ID of the admin.
-     * @return a no content response or an error message.
-     */
+
     @DeleteMapping("/admin/delete-admin/{id}")
     @ApiOperation(value = "Delete admin", notes = "Deletes a specific admin by their ID.")
     @ApiResponses(value = {

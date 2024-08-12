@@ -13,17 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Controller for handling ticket-related requests.
- *
- * This controller provides endpoints for managing tickets.
- *
- * Created by Yassine Oularbi
- *
- * Contact:
- * Email: yassineoularbi4@gmail.com
- * GitHub: @YassineOularbi
- */
+
 
 @RestController
 @RequestMapping("/api/ticket")
@@ -35,14 +25,7 @@ public class TicketController {
 
     private final TicketService ticketService;
 
-    /**
-     * Endpoint for reporting a breakdown with a ticket.
-     *
-     * @param equipmentId the ID of the equipment.
-     * @param breakdownId the ID of the breakdown.
-     * @param ticketDto the ticket details.
-     * @return the created ticket or an error message.
-     */
+
     @PostMapping("/client/report-breakdown-ticket/{equipmentId}&{breakdownId}")
     @ApiOperation(value = "Report breakdown with ticket", notes = "Reports a breakdown for equipment and creates a ticket.")
     @ApiResponses(value = {
@@ -62,12 +45,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for retrieving all tickets by client ID.
-     *
-     * @param id the ID of the client.
-     * @return a list of all tickets associated with the client or an error message.
-     */
+
     @GetMapping("/client/get-all-tickets/{id}")
     @ApiOperation(value = "Get all tickets by client ID", notes = "Retrieves all tickets associated with a specific client.")
     @ApiResponses(value = {
@@ -84,13 +62,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for assigning a ticket to a technician.
-     *
-     * @param ticketId the ID of the ticket.
-     * @param technicianId the ID of the technician.
-     * @return the assigned ticket or an error message.
-     */
+
     @PutMapping("/admin/assign-ticket/{ticketId}/to/{technicianId}")
     @ApiOperation(value = "Assign ticket to technician", notes = "Assigns a specific ticket to a technician.")
     @ApiResponses(value = {
@@ -108,11 +80,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for retrieving all tickets.
-     *
-     * @return a list of tickets or an error message.
-     */
+
     @GetMapping("/admin/get-all-tickets")
     @ApiOperation(value = "Get all tickets", notes = "Retrieves a list of all tickets.")
     @ApiResponses(value = {
@@ -128,11 +96,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for retrieving pending tickets.
-     *
-     * @return a list of pending tickets or an error message.
-     */
+
     @GetMapping("/admin/get-pending-tickets")
     @ApiOperation(value = "Get pending tickets", notes = "Retrieves a list of all pending tickets.")
     @ApiResponses(value = {
@@ -148,12 +112,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for retrieving processing tickets for a technician.
-     *
-     * @param id the ID of the technician.
-     * @return a list of processing tickets or an error message.
-     */
+
     @GetMapping("/technician/get-processing-tickets/{id}")
     @ApiOperation(value = "Get processing tickets by technician ID", notes = "Retrieves all tickets currently being processed by a specific technician.")
     @ApiResponses(value = {
@@ -170,12 +129,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for retrieving all tickets assigned to a technician.
-     *
-     * @param id the ID of the technician.
-     * @return a list of all tickets assigned to the technician or an error message.
-     */
+
     @GetMapping("/technician/get-all-tickets/{id}")
     @ApiOperation(value = "Get all tickets by technician ID", notes = "Retrieves all tickets assigned to a specific technician.")
     @ApiResponses(value = {
@@ -192,12 +146,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for updating the status of a ticket to "repairing".
-     *
-     * @param id the ID of the ticket.
-     * @return the updated ticket or an error message.
-     */
+
     @PutMapping("/technician/repairing-ticket/{id}")
     @ApiOperation(value = "Update ticket status to 'repairing'", notes = "Updates the status of a specific ticket to 'repairing'.")
     @ApiResponses(value = {
@@ -214,12 +163,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for updating the status of a ticket to "repaired".
-     *
-     * @param id the ID of the ticket.
-     * @return the updated ticket or an error message.
-     */
+
     @PutMapping("/technician/repaired-ticket/{id}")
     @ApiOperation(value = "Update ticket status to 'repaired'", notes = "Updates the status of a specific ticket to 'repaired'.")
     @ApiResponses(value = {
@@ -236,12 +180,7 @@ public class TicketController {
         }
     }
 
-    /**
-     * Endpoint for updating the status of a ticket to "failed".
-     *
-     * @param id the ID of the ticket.
-     * @return the updated ticket or an error message.
-     */
+
     @PutMapping("/technician/failed-ticket/{id}")
     @ApiOperation(value = "Update ticket status to 'failed'", notes = "Updates the status of a specific ticket to 'failed'.")
     @ApiResponses(value = {

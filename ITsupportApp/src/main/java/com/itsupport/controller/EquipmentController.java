@@ -13,17 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Controller for handling equipment-related requests.
- *
- * This controller provides endpoints for managing equipments.
- *
- * Created by Yassine Oularbi
- *
- * Contact:
- * Email: yassineoularbi4@gmail.com
- * GitHub: @YassineOularbi
- */
 
 @RestController
 @RequestMapping("/api/equipment")
@@ -33,12 +22,6 @@ public class EquipmentController {
 
     private final EquipmentService equipmentService;
 
-    /**
-     * Endpoint for creating new equipment.
-     *
-     * @param equipmentDto the equipment details.
-     * @return the created equipment or an error message.
-     */
     @PostMapping("/admin/create-equipment")
     @ApiOperation(value = "Create new equipment", notes = "Creates a new piece of equipment.")
     @ApiResponses(value = {
@@ -55,11 +38,7 @@ public class EquipmentController {
         }
     }
 
-    /**
-     * Endpoint for retrieving all equipment.
-     *
-     * @return a list of equipment or an error message.
-     */
+
     @GetMapping("/admin/get-all-equipments")
     @ApiOperation(value = "Get all equipment", notes = "Retrieves a list of all equipment.")
     @ApiResponses(value = {
@@ -75,12 +54,7 @@ public class EquipmentController {
         }
     }
 
-    /**
-     * Endpoint for retrieving equipment by ID.
-     *
-     * @param id the ID of the equipment.
-     * @return the equipment or an error message.
-     */
+
     @GetMapping("/admin/get-equipment-by-id/{id}")
     @ApiOperation(value = "Get equipment by ID", notes = "Retrieves a specific piece of equipment by its ID.")
     @ApiResponses(value = {
@@ -97,13 +71,7 @@ public class EquipmentController {
         }
     }
 
-    /**
-     * Endpoint for updating equipment details.
-     *
-     * @param id the ID of the equipment.
-     * @param equipmentDto the updated equipment details.
-     * @return the updated equipment or an error message.
-     */
+
     @PutMapping("/admin/update-equipment/{id}")
     @ApiOperation(value = "Update equipment", notes = "Updates the details of a specific piece of equipment.")
     @ApiResponses(value = {
@@ -121,12 +89,6 @@ public class EquipmentController {
         }
     }
 
-    /**
-     * Endpoint for deleting equipment.
-     *
-     * @param id the ID of the equipment.
-     * @return a no content response or an error message.
-     */
     @DeleteMapping("/admin/delete-equipment/{id}")
     @ApiOperation(value = "Delete equipment", notes = "Deletes a specific piece of equipment by its ID.")
     @ApiResponses(value = {
@@ -143,13 +105,7 @@ public class EquipmentController {
         }
     }
 
-    /**
-     * Endpoint for assigning equipment to a client.
-     *
-     * @param equipmentId the ID of the equipment.
-     * @param clientId the ID of the client.
-     * @return the assigned equipment or an error message.
-     */
+
     @PutMapping("/admin/assign-equipment/{equipmentId}/to/{clientId}")
     @ApiOperation(value = "Assign equipment to client", notes = "Assigns a specific piece of equipment to a client.")
     @ApiResponses(value = {
@@ -167,11 +123,7 @@ public class EquipmentController {
         }
     }
 
-    /**
-     * Endpoint for retrieving all equipment that are out of service.
-     *
-     * @return a list of out-of-service equipment or an error message.
-     */
+
     @GetMapping("/admin/get-all-equipment-out-service")
     @ApiOperation(value = "Get all equipment out of service", notes = "Retrieves a list of all equipment that are out of service.")
     @ApiResponses(value = {
@@ -187,12 +139,7 @@ public class EquipmentController {
         }
     }
 
-    /**
-     * Endpoint for retrieving equipment by client ID.
-     *
-     * @param id the ID of the client.
-     * @return a list of equipment associated with the client or an error message.
-     */
+
     @GetMapping("/client/get-equipments-by-client/{id}")
     @ApiOperation(value = "Get equipment by client ID", notes = "Retrieves all equipment associated with a specific client.")
     @ApiResponses(value = {

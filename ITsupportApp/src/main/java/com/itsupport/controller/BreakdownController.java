@@ -12,17 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Controller for handling breakdown-related requests.
- *
- * This controller provides endpoints for managing breakdowns.
- *
- * Created by Yassine Oularbi
- *
- * Contact:
- * Email: yassineoularbi4@gmail.com
- * GitHub: @YassineOularbi
- */
+
 
 @RestController
 @RequestMapping("/api/breakdown")
@@ -32,12 +22,7 @@ public class BreakdownController {
 
     private final BreakdownService breakdownService;
 
-    /**
-     * Endpoint for creating a new breakdown.
-     *
-     * @param breakdownDto the breakdown details.
-     * @return the created breakdown or an error message.
-     */
+
     @PostMapping("/admin/create-breakdown")
     @ApiOperation(value = "Create new breakdown", notes = "Creates a new breakdown entry.")
     @ApiResponses(value = {
@@ -54,11 +39,7 @@ public class BreakdownController {
         }
     }
 
-    /**
-     * Endpoint for retrieving all breakdowns.
-     *
-     * @return a list of breakdowns or an error message.
-     */
+
     @GetMapping("/get-all-breakdowns")
     @ApiOperation(value = "Get all breakdowns", notes = "Retrieves a list of all breakdowns.")
     @ApiResponses(value = {
@@ -74,12 +55,7 @@ public class BreakdownController {
         }
     }
 
-    /**
-     * Endpoint for retrieving a breakdown by ID.
-     *
-     * @param id the ID of the breakdown.
-     * @return the breakdown or an error message.
-     */
+
     @GetMapping("/admin/get-breakdown-by-id/{id}")
     @ApiOperation(value = "Get breakdown by ID", notes = "Retrieves a specific breakdown by its ID.")
     @ApiResponses(value = {
@@ -96,13 +72,7 @@ public class BreakdownController {
         }
     }
 
-    /**
-     * Endpoint for updating a breakdown.
-     *
-     * @param id the ID of the breakdown.
-     * @param breakdownDto the updated breakdown details.
-     * @return the updated breakdown or an error message.
-     */
+
     @PutMapping("/admin/update-breakdown/{id}")
     @ApiOperation(value = "Update breakdown", notes = "Updates the details of a specific breakdown.")
     @ApiResponses(value = {
@@ -120,12 +90,7 @@ public class BreakdownController {
         }
     }
 
-    /**
-     * Endpoint for deleting a breakdown.
-     *
-     * @param id the ID of the breakdown.
-     * @return a no content response or an error message.
-     */
+
     @DeleteMapping("/admin/delete-breakdown/{id}")
     @ApiOperation(value = "Delete breakdown", notes = "Deletes a specific breakdown by its ID.")
     @ApiResponses(value = {

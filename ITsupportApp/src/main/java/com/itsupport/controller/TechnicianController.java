@@ -12,17 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Controller for handling technician-related requests.
- *
- * This controller provides endpoints for managing technicians.
- *
- * Created by Yassine Oularbi
- *
- * Contact:
- * Email: yassineoularbi4@gmail.com
- * GitHub: @YassineOularbi
- */
+
 
 @RestController
 @RequestMapping("/api/technician")
@@ -32,11 +22,7 @@ public class TechnicianController {
 
     private final TechnicianService technicianService;
 
-    /**
-     * Endpoint for retrieving all technicians.
-     *
-     * @return a list of technicians or an error message.
-     */
+
     @GetMapping("/get-all-technicians")
     @ApiOperation(value = "Get all technicians", notes = "Retrieves a list of all technicians.")
     @ApiResponses(value = {
@@ -52,11 +38,7 @@ public class TechnicianController {
         }
     }
 
-    /**
-     * Endpoint for retrieving available technicians.
-     *
-     * @return a list of available technicians or an error message.
-     */
+
     @GetMapping("/get-available-technicians")
     @ApiOperation(value = "Get available technicians", notes = "Retrieves a list of available technicians.")
     @ApiResponses(value = {
@@ -72,12 +54,7 @@ public class TechnicianController {
         }
     }
 
-    /**
-     * Endpoint for retrieving a technician by ID.
-     *
-     * @param id the ID of the technician.
-     * @return the technician or an error message.
-     */
+
     @GetMapping("/get-technician-by-id/{id}")
     @ApiOperation(value = "Get technician by ID", notes = "Retrieves a specific technician by their ID.")
     @ApiResponses(value = {
@@ -94,13 +71,7 @@ public class TechnicianController {
         }
     }
 
-    /**
-     * Endpoint for updating a technician.
-     *
-     * @param id the ID of the technician.
-     * @param userUpdateDto the technician update details.
-     * @return the updated technician or an error message.
-     */
+
     @PutMapping("/update-technician/{id}")
     @ApiOperation(value = "Update technician", notes = "Updates the details of a specific technician.")
     @ApiResponses(value = {
@@ -118,12 +89,7 @@ public class TechnicianController {
         }
     }
 
-    /**
-     * Endpoint for deleting a technician.
-     *
-     * @param id the ID of the technician.
-     * @return a no content response or an error message.
-     */
+
     @DeleteMapping("/delete-technician/{id}")
     @ApiOperation(value = "Delete technician", notes = "Deletes a specific technician by their ID.")
     @ApiResponses(value = {
