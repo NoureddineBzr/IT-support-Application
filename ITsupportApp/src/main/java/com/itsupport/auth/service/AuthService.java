@@ -12,18 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-/**
- * Service class for managing authentication and user registration.
- *
- * This service handles user login and registration for different roles (admin, technician, client).
- * It also interacts with the database repositories and manages JWT token generation.
- *
- * Created by Yassine Oularbi
- *
- * Contact:
- * Email: yassineoularbi4@gmail.com
- * GitHub: @YassineOularbi
- */
+
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -40,13 +29,7 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
 
-    /**
-     * Authenticates a user and generates a JWT token.
-     *
-     * @param loginRequest the login request containing username and password
-     * @return an {@link AuthResponse} containing the generated JWT token
-     * @throws LoginException if authentication fails due to invalid credentials, user not found, or other issues
-     */
+
     public AuthResponse login(LoginRequest loginRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(
@@ -64,13 +47,7 @@ public class AuthService {
         }
     }
 
-    /**
-     * Registers a new admin and generates a JWT token.
-     *
-     * @param registerRequest the registration request containing user details
-     * @return an {@link AuthResponse} containing the generated JWT token
-     * @throws RegistrationException if a user with the same username already exists
-     */
+
     public AuthResponse adminRegister(RegisterRequest registerRequest) {
         if (userRepository.findByUsername(registerRequest.getUsername()).isPresent()) {
             throw new RegistrationException();
@@ -82,13 +59,7 @@ public class AuthService {
                 .build();
     }
 
-    /**
-     * Registers a new technician and generates a JWT token.
-     *
-     * @param registerRequest the registration request containing user details
-     * @return an {@link AuthResponse} containing the generated JWT token
-     * @throws RegistrationException if a user with the same username already exists
-     */
+
     public AuthResponse technicianRegister(RegisterRequest registerRequest) {
         if (userRepository.findByUsername(registerRequest.getUsername()).isPresent()) {
             throw new RegistrationException();
@@ -101,13 +72,7 @@ public class AuthService {
                 .build();
     }
 
-    /**
-     * Registers a new client and generates a JWT token.
-     *
-     * @param registerRequest the registration request containing user details
-     * @return an {@link AuthResponse} containing the generated JWT token
-     * @throws RegistrationException if a user with the same username already exists
-     */
+
     public AuthResponse clientRegister(RegisterRequest registerRequest) {
         if (userRepository.findByUsername(registerRequest.getUsername()).isPresent()) {
             throw new RegistrationException();

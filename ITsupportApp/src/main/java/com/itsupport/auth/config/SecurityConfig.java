@@ -15,15 +15,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-/**
- * Security configuration class for setting up web security, including authentication and authorization.
- *
- * Created by Yassine Oularbi
- *
- * Contact:
- * Email: yassineoularbi4@gmail.com
- * GitHub: @YassineOularbi
- */
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -32,13 +24,7 @@ public class SecurityConfig {
     private final AuthFilter authFilter;
     private final AuthenticationProvider authenticationProvider;
 
-    /**
-     * Configures the security filter chain.
-     *
-     * @param http the HttpSecurity object to configure.
-     * @return the configured SecurityFilterChain.
-     * @throws Exception if an error occurs during configuration.
-     */
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)

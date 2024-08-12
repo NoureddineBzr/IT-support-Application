@@ -22,19 +22,9 @@ import lombok.*;
 @NoArgsConstructor
 public class LoginRequest {
 
-    /**
-     * The username of the user attempting to log in.
-     *
-     * This field is required for authentication and is used to identify the
-     * user in the system.
-     */
+
     private String username;
 
-    /**
-     * The password of the user attempting to log in.
-     *
-     * This field is required for authentication and is used to verify the
-     * user's identity.
-     */
+
     private String password;
 }
