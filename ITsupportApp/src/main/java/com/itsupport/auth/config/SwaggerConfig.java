@@ -48,6 +48,6 @@ public class SwaggerConfig {
                 .title("Authentication Service API Documentation")
                 .version("1.0.0")
                 .description("HTTP APIs to manage user registration and authentication.")
-                .contact(new Contact().name("Yassine OULARBI").email("yassineoularbi4@gmail.com").url("https://github.com/YassineOularbi"));
+                .contact(new Contact().name("Noureddine BOUZIRE").email("noureddine.bouzire1@gmail.com").url("https://github.com/noureddineBzr"));
     }
 }
