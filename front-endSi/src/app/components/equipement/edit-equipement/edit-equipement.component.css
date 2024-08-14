@@ -1,0 +1,99 @@
+/* Background overlay for the popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease; /* Smooth transition for appearance */
+}
+
+/* Main content of the popup */
+.popup-content {
+  background: #073055;
+  padding: 30px;
+  border-radius: 12px; /* Slightly more rounded corners */
+  width: 80%;
+  max-width: 450px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  animation: fadeIn 0.3s ease; /* Fade-in animation */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Style for labels */
+.popup-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffffff; /* Darker text color */
+}
+
+/* Style for input fields */
+.popup-content input[type="text"],
+.popup-content input[type="date"],
+.popup-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus state for input fields */
+.popup-content input[type="text"]:focus,
+.popup-content input[type="date"]:focus,
+.popup-content textarea:focus {
+  border-color: #007BFF; /* Blue border on focus */
+  outline: none;
+}
+
+/* Style for buttons */
+.popup-content button {
+  padding: 10px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Submit button style */
+.popup-content button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+}
+
+/* Submit button hover state */
+.popup-content button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel button style */
+.popup-content button[type="button"] {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Cancel button hover state */
+.popup-content button[type="button"]:hover {
+  background-color: #5a6268;
+}

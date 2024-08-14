@@ -1,0 +1,25 @@
+<div class="scrollable-table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Date d'Acquisition</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let equipement of equipements">
+      <td>{{ equipement.nom }}</td>
+      <td>{{ equipement.description }}</td>
+      <td>{{ equipement.dateAcquisition | date }}</td>
+      <td>
+        <button class="edit-btn" (click)="openEditPopup(equipement)">Modifier</button>
+        <button class="delete-btn" (click)="deleteEquipement(equipement.id)">Supprimer</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!-- Popup de modification -->
+  <app-edit-equipement *ngIf="showEditPopup" [equipement]="selectedEquipement" (closePopup)="closeEditPopup()"></app-edit-equipement>
+</div>

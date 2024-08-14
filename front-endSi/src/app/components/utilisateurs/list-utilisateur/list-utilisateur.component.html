@@ -1,0 +1,19 @@
+<div class="scrollable-table-container">
+
+  <table>
+    <thead>
+    <tr>
+      <th>Nom d'utilisateur</th>
+      <th>Email</th>
+      <th>Rôle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let utilisateur of utilisateurs">
+      <td>{{ utilisateur.username }}</td>
+      <td>{{ utilisateur.email }}</td>
+      <td>{{ utilisateur.role }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+<div class="scrollable-table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>Description</th>
+      <th>État</th>
+      <th>Date de Création</th>
+      <th>Date de Résolution</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let ticket of tickets">
+      <td>{{ ticket.description }}</td>
+      <td>{{ ticket.etat }}</td>
+      <td>{{ ticket.dateCreation | date }}</td>
+      <td>{{ ticket.dateResolution | date }}</td>
+      <td>
+        <button (click)="deleteTicket(ticket.id)">Supprimer</button>
+        <a [routerLink]="['/edit-ticket', ticket.id]">Modifier</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

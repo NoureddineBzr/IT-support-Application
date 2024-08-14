@@ -1,0 +1,26 @@
+<h2>Ajouter un Ticket</h2>
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="description">Description:</label>
+    <input id="description" formControlName="description" />
+  </div>
+
+  <div>
+    <label for="etat">État:</label>
+    <select id="etat" formControlName="etat">
+      <option *ngFor="let etat of etatOptions" [value]="etat">{{ etat }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="dateCreation">Date de Création:</label>
+    <input id="dateCreation" type="date" formControlName="dateCreation" />
+  </div>
+
+  <div>
+    <label for="dateResolution">Date de Résolution:</label>
+    <input id="dateResolution" type="date" formControlName="dateResolution" />
+  </div>
+
+  <button type="submit" [disabled]="ticketForm.invalid">Ajouter Ticket</button>
+</form>

@@ -1,0 +1,21 @@
+<div class="popup" *ngIf="equipement">
+  <div class="popup-content">
+    <h2>Modifier Équipement</h2>
+    <form (ngSubmit)="onSubmit()" #editForm="ngForm">
+      <div>
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" [(ngModel)]="equipement.nom" name="nom" required>
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" [(ngModel)]="equipement.description" name="description" required></textarea>
+      </div>
+      <div>
+        <label for="dateAcquisition">Date d'Acquisition:</label>
+        <input type="date" id="dateAcquisition" [(ngModel)]="equipement.dateAcquisition" name="dateAcquisition" required>
+      </div>
+      <button type="submit">Enregistrer</button>
+      <button type="button" (click)="closePopupMethod()">Annuler</button>
+    </form>
+  </div>
+</div>

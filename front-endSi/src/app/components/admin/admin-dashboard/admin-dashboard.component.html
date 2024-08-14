@@ -1,0 +1,49 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<!-- Sidebar -->
+<div class="sidebar">
+  <a href="https://imgbb.com/" class="logo">
+    <img src="https://i.ibb.co/6sYXX3N/th-removebg-preview.png"  width="60px" height="60px"/>
+    <div class="logo-name"><span>Hello</span>Event</div>
+  </a>
+  <ul class="side-menu">
+    <li><a routerLink="/admin-dashboard"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+    <li><a routerLink="/admin-dashboard"><i class='bx bxs-cog'></i>Equipement</a></li>
+    <li class="active"><a routerLink="/admin-dashboard/Ticket-page"><i class='bx bxs-ticket'></i>Tickets</a></li>
+    <li><a routerLink="/admin-dashboard"><i class='bx bxs-error'></i>Panne</a></li>
+    <li><a routerLink="/admin-dashboard"><i class='bx bxs-bell'></i>Notification</a></li>
+    <li><a routerLink="/admin-dashboard/User-page"><i class='bx bxs-users'></i>Utilisateur</a></li>
+  </ul>
+  <ul class="side-menu">
+    <li>
+      <a href="#" class="logout">
+        <i class='bx bx-log-out-circle'></i>Logout
+      </a>
+    </li>
+  </ul>
+</div>
+<!-- End of Sidebar -->
+
+<!-- Main Content -->
+<div class="content">
+  <!-- Navbar -->
+  <nav>
+    <i class='bx bx-menu'></i>
+    <form action="#">
+      <div class="form-input">
+        <input type="search" placeholder="Search..." name="search">
+        <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+      </div>
+    </form>
+    <input type="checkbox" id="theme-toggle" hidden>
+    <label for="theme-toggle" class="theme-toggle"></label>
+    <a href="#" class="notif">
+      <i class='bx bx-bell'></i>
+      <span class="count">12</span>
+    </a>
+    <a href="#" class="profile">
+      <img src="https://i.ibb.co/pxQ5Dzf/woman.png">
+    </a>
+  </nav>
+ <router-outlet></router-outlet>
+</div>
+

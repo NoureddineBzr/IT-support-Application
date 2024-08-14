@@ -1,0 +1,53 @@
+<div class="add-user-form">
+  <h2>Ajouter un utilisateur</h2>
+  <form [formGroup]="utilisateurForm" (ngSubmit)="onSubmit()">
+
+    <!-- Champ pour le nom d'utilisateur -->
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input id="username" formControlName="username" placeholder="Entrez le nom d'utilisateur">
+      <div *ngIf="utilisateurForm.get('username')?.invalid && utilisateurForm.get('username')?.touched" class="error-message">
+        Le nom d'utilisateur est requis.
+      </div>
+    </div>
+
+    <!-- Champ pour l'email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" placeholder="Entrez l'email">
+      <div *ngIf="utilisateurForm.get('email')?.invalid && utilisateurForm.get('email')?.touched" class="error-message">
+        Un email valide est requis.
+      </div>
+    </div>
+
+    <!-- Champ pour le mot de passe -->
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" formControlName="password" placeholder="Entrez le mot de passe">
+      <div *ngIf="utilisateurForm.get('password')?.invalid && utilisateurForm.get('password')?.touched" class="error-message">
+        Le mot de passe est requis.
+      </div>
+    </div>
+
+    <!-- Champ pour le rôle -->
+    <div class="form-group">
+      <label for="role">Rôle</label>
+      <select id="role" formControlName="role">
+        <option value="" disabled>Sélectionnez un rôle</option>
+        <option value="ADMIN">ADMIN</option>
+        <option value="USER">USER</option>
+        <option value="TECHNICIAN">TECHNICIAN</option>
+      </select>
+      <div *ngIf="utilisateurForm.get('role')?.invalid && utilisateurForm.get('role')?.touched" class="error-message">
+        Le rôle est requis.
+      </div>
+    </div>
+
+    <!-- Bouton d'ajout -->
+    <div class="form-actions">
+      <button type="submit" [disabled]="utilisateurForm.invalid">
+        <i class="fas fa-plus"></i> Ajouter
+      </button>
+    </div>
+  </form>
+</div>
